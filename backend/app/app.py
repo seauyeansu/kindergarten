@@ -21,8 +21,8 @@ def index():
         group = details['groupName']
         email = details['email']
         password = details['password']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO Parents(motherName, fatherName, firstNameofChild, groupName, email, password) VALUES (%s, %s, %s, %s, %s, %s)", (motherName, fatherName, firstNameofChild, groupName, email, password))
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO Parents(motherName, fatherName, firstNameofChild, groupName, email, password) VALUES (%s, %s, %s, %s, %s, %s)", (motherName, fatherName, firstNameofChild, groupName, email, password))
         mysql.connection.commit()
         cur.close()
         return 'success'

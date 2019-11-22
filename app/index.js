@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -40,9 +41,11 @@ import './index.css';
 
     render () {
     return (
-      <div className = 'Registration'>
+        <div class="container">
+        <div class="row">
+        <div className = 'Registration'>
         <h1>Registration</h1>
-        <Form onSubmit={this.handleSubmit}>
+        <Form>
         <Form.Group>
           <Form.Label>
             Name of Mother:
@@ -102,8 +105,10 @@ import './index.css';
                 value={this.state.password} />
           </Form.Label>
           </Form.Group>
-          <Button>Submit</Button>
+          <Button onSubmit={this.handleSubmit}>Submit</Button>
         </Form>
+        </div>
+        </div>
       </div>
     )
   }
