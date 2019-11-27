@@ -10,21 +10,25 @@ app.config['MYSQL_DB'] = 'test'
 
 mysql = MySQL(app)
 
-@app.route('/', methods = ['GET', 'POST'])
-@app.route('/index')
+@app.route('/', methods = ['GET'])
+def main():
+    return render_template('index.html')
+
+@app.route('/insertintodatabase', methods=['POST'])
 def index():
     if request.method == "POST":
         details = request.form
         motherName = details['motherName']
         fatherName = details['fatherName']
         firstNameofChild = details['firstNameofChild']
-        group = details['groupName']
+        groupName = details['groupName']
         email = details['email']
         password = details['password']
         cursor = mysql.connection.cursor()
-        cursor.execute("INSERT INTO Parents(motherName, fatherName, firstNameofChild, groupName, email, password) VALUES (%s, %s, %s, %s, %s, %s)", (motherName, fatherName, firstNameofChild, groupName, email, password))
+        values = (motherName, fatherName, firstNameofChild, groupName, email, password,)
+        cursor.execute("INSERT INTO Parents (motherName, fatherName, firstNameofChild, groupName, email, password) VALUES (%s, %s, %s, %s, %s, %s)", values)
         mysql.connection.commit()
-        cur.close()
+        cursor.close()
         return 'success'
     return render_template('index.html')
 

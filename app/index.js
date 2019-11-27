@@ -26,26 +26,17 @@ import './index.css';
         this.setState( { [name]: value })
         }
 
-      handleSubmit(event) {
-        event.preventDefault()
-
-        const {
-          motherName,
-          fatherName,
-          firstNameofChild,
-          groupName,
-          email,
-          password,
-        } = this.state
-      }
-
     render () {
     return (
         <div class="container">
         <div class="row">
         <div className = 'Registration'>
         <h1>Registration</h1>
-        <Form>
+        </div>
+        </div>
+        <div class="container">
+        <div class="row">
+        <Form action="/insertintodatabase" method="POST">
         <Form.Group>
           <Form.Label>
             Name of Mother:
@@ -82,7 +73,7 @@ import './index.css';
               <Form.Control
                 name="groupName"
                 type="text"
-                value={this.state.group}
+                value={this.state.groupName}
                 onChange={this.handleRegistrationInput} />
           </Form.Label>
           </Form.Group>
@@ -100,12 +91,13 @@ import './index.css';
           <Form.Label>
             Password:
               <Form.Control
-                name="email"
-                type="text"
-                value={this.state.password} />
+                name="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleRegistrationInput} />
           </Form.Label>
           </Form.Group>
-          <Button onSubmit={this.handleSubmit}>Submit</Button>
+          <input type = "submit" value = "Submit" />
         </Form>
         </div>
         </div>
