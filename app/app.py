@@ -6,7 +6,7 @@ app = Flask (__name__,template_folder='templates')
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'ssh-agent'
-app.config['MYSQL_DB'] = 'parents'
+app.config['MYSQL_DB'] = 'test'
 
 mysql = MySQL(app)
 
