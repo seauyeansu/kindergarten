@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: './app/index.js',
   output: {
-    path: path.resolve(__dirname, 'backend/app/static'),
+    path: path.resolve(__dirname, 'app/static'),
     filename: 'index_bundle.js'
   },
     module: {
