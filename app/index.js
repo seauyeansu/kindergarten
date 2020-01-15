@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact';
+import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -28,10 +28,14 @@ import './index.css';
 
     render () {
     return (
+      <div className="App">
+      <Navbar bg="light" expand="lg">
+      <Navbar.Brand>Kindergarten St. Johannes</Navbar.Brand>
+      </Navbar>
         <div class="container">
         <div class="row">
         <div className = 'Registration'>
-        <h1>Registration</h1>
+        <h1>Anmelden</h1>
         </div>
         </div>
         <div class="container">
@@ -39,7 +43,7 @@ import './index.css';
         <Form action="/insertintodatabase" method="POST">
         <Form.Group>
           <Form.Label>
-            Name of Mother:
+            Name der Mutter:
               <Form.Control
                 name="motherName"
                 type="text"
@@ -49,7 +53,7 @@ import './index.css';
           </Form.Group>
           <Form.Group>
           <Form.Label>
-            Name of Father:
+            Name des Vaters:
               <Form.Control
                 name="fatherName"
                 type="text"
@@ -59,7 +63,7 @@ import './index.css';
           </Form.Group>
           <Form.Group>
           <Form.Label>
-            First Name of Child:
+            Vorname des Kindes:
               <Form.Control
                 name="firstNameofChild"
                 type="text"
@@ -69,7 +73,7 @@ import './index.css';
           </Form.Group>
           <Form.Group>
           <Form.Label>
-            Group Name:
+            Gruppenname:
               <Form.Control
                 name="groupName"
                 type="text"
@@ -89,7 +93,7 @@ import './index.css';
           </Form.Group>
           <Form.Group>
           <Form.Label>
-            Password:
+            Passwort:
               <Form.Control
                 name="password"
                 type="password"
@@ -97,8 +101,9 @@ import './index.css';
                 onChange={this.handleRegistrationInput} />
           </Form.Label>
           </Form.Group>
-          <input type = "submit" value = "Submit" />
+          <input type = "submit" value = "Anmeldung abschicken" />
         </Form>
+        </div>
         </div>
         </div>
       </div>
