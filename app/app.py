@@ -14,7 +14,7 @@ mysql = MySQL(app)
 def main():
     return render_template('index.html')
 
-@app.route('/insertintodatabase', methods=['POST'])
+@app.route('/einfügen', methods=['POST'])
 def index():
     if request.method == "POST":
         details = request.form
@@ -29,8 +29,7 @@ def index():
         cursor.execute("INSERT INTO parents (motherName,fatherName,firstNameofChild,groupName,email,password) VALUES (%s, %s, %s, %s, %s, %s)", values)
         mysql.connection.commit()
         cursor.close()
-        return 'success'
-    return render_template('index.html')
+        return 'Geschafft!'
 
 
 if __name__ == '__main__':

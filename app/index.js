@@ -40,7 +40,7 @@ import './index.css';
         </div>
         <div class="container">
         <div class="row">
-        <Form action="/insertintodatabase" method="POST">
+        <Form action="/einfügen" method="POST">
         <Form.Group>
           <Form.Label>
             Name der Mutter:
