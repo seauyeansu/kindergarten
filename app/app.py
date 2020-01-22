@@ -14,7 +14,7 @@ mysql = MySQL(app)
 def main():
     return render_template('index.html')
 
-@app.route('/einfügen', methods=['POST'])
+@app.route('/kindergarten/app/static/einfügen', methods=['POST'])
 def index():
     if request.method == "POST":
         details = request.form
